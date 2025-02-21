@@ -1,0 +1,111 @@
+/* Reset all box styles first */
+article#work .box.style1.equal-height,
+article#work .box.style1.equal-height * {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Container styles */
+article#work .row.aln-center {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 0 -0.5em;
+}
+
+/* Column styles */
+article#work .col-4.col-6-medium.col-12-small {
+  display: flex;
+  padding: 0.5em;
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+}
+
+/* Box styles */
+article#work .box.style1.equal-height {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2em;
+  margin: 0;
+  height: 400px; /* Fixed height */
+  min-height: 400px; /* Ensure minimum height */
+  max-height: 400px; /* Enforce maximum height */
+}
+
+/* Reset any potential background colors */
+article#work .box.style1.equal-height,
+article#work .box.style1.equal-height > *,
+article#work .box.style1.equal-height p,
+article#work .box.style1.equal-height h3,
+article#work .box.style1.equal-height span {
+  background-color: transparent !important;
+}
+
+/* Content styles */
+article#work .box.style1.equal-height .icon.featured {
+  margin-bottom: 1.5em;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+article#work .box.style1.equal-height h3 {
+  margin: 0 0 1.5em 0;
+  flex-shrink: 0; /* Prevent heading from shrinking */
+}
+
+article#work .box.style1.equal-height p {
+  margin: 0;
+  overflow-y: auto; /* Make content scrollable if needed */
+  flex: 1;
+  padding-right: 10px; /* Space for scrollbar */
+}
+
+/* Customize scrollbar for webkit browsers */
+article#work .box.style1.equal-height p::-webkit-scrollbar {
+  width: 4px;
+}
+
+article#work .box.style1.equal-height p::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+}
+
+article#work .box.style1.equal-height p::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+/* Media query adjustments */
+@media screen and (min-width: 1281px) {
+  article#work .col-4.col-6-medium.col-12-small {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  article#work .col-4.col-6-medium.col-12-small {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  article#work .box.style1.equal-height {
+    height: 350px;
+    min-height: 350px;
+    max-height: 350px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  article#work .col-4.col-6-medium.col-12-small {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  article#work .box.style1.equal-height {
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+  }
+}
